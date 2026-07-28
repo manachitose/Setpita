@@ -1,0 +1,38 @@
+name: Build privacy policy HTML
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - "docs/privacy-policy.md"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    # このワークフロー自身のコミットで再トリガーされる無限ループを防ぐ
+    if: "!contains(github.event.head_commit.message, '[skip privacy-policy]')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm install --no-save marked
+
+      - run: node scripts/build-privacy-policy.mjs
+
+      - name: Commit changes if needed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- docs/privacy-policy.html; then
+            echo "No changes to commit"
+          else
+            git add docs/privacy-policy.html
+            git commit -m "chore: regenerate privacy-policy.html [skip privacy-policy]"
+            git push
+          fi

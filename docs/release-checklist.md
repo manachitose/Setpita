@@ -11,9 +11,9 @@
 
 ### 1. プライバシーポリシーの公開
 Web Storeの審査には、プライバシーポリシーの**公開URL**が必要です。`docs/privacy-policy.md`の内容を、以下のいずれかの方法で公開してください。
-- GitHub Pagesで公開する
-- Notion / Google Sitesなど無料のページ作成サービスを使う
-- (相談すればArtifactとして公開URLを発行することも可能)
+- このリポジトリでGitHub Pagesを有効化する(Settings → Pages → Source: Deploy from a branch → Branch: main, フォルダ: `/docs`)
+- 有効化後、`https://<ユーザー名>.github.io/<リポジトリ名>/privacy-policy.html` がプライバシーポリシーの公開URLになる
+- `docs/privacy-policy.md`を編集してpushすると、GitHub Actions(`build-privacy-policy.yml`)が自動で`docs/privacy-policy.html`を再生成してくれるので、`.md`だけ編集すればよい(`.html`は手で編集しない)
 
 ### 2. スクリーンショットの準備
 Web Storeには最低1枚、スクリーンショット(1280×800 または 640×400)が必要です。サイドパネルの使用画面などを用意してください。

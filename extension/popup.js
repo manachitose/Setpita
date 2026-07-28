@@ -5,8 +5,12 @@ function sendMessage(message) {
 // コード変更のたびに手動で更新する(バージョンはmanifest.jsonから自動取得)
 const LAST_UPDATED = "2026-07-28";
 
-document.getElementById("appInfo").textContent =
+document.getElementById("appVersionInfo").textContent =
   `v${chrome.runtime.getManifest().version} (最終更新: ${LAST_UPDATED})`;
+
+// Web Store公開後、拡張機能IDがそのままストアページのURLになる
+document.getElementById("storePageLink").href =
+  `https://chromewebstore.google.com/detail/${chrome.runtime.id}`;
 
 function formatLocalTime(ts) {
   const d = new Date(ts);

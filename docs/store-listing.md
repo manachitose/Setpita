@@ -1,7 +1,7 @@
 # Chrome Web Store 掲載用テキスト(下書き)
 
 ## 拡張機能名
-Setpeta
+SetPita | セトピタ
 
 ## 概要(132文字以内)
 YouTube歌枠配信のカラオケ音源再生を自動検知し、タイムスタンプ付きセトリを自動生成するツール
@@ -40,4 +40,6 @@ Setpetaは、YouTubeで歌枠配信をする配信者向けのChrome拡張機能
 YouTube上でのカラオケ音源再生を検知してタイムスタンプを記録し、配信アーカイブ向けのセトリ(タイムスタンプ付き楽曲リスト)を生成すること。
 
 ## プライバシーポリシーURL
-[docs/privacy-policy.md](privacy-policy.md) の内容を、公開URL(GitHubPages等)でホストしたものを指定する。
+このリポジトリのGitHub Pagesで公開する(`docs/privacy-policy.md`を編集→pushすると
+GitHub Actionsが`docs/privacy-policy.html`を自動生成する)。
+公開後のURL: `https://<ユーザー名>.github.io/<リポジトリ名>/privacy-policy.html`

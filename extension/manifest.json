@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Setpeta",
+  "name": "SetPita | セトピタ",
   "version": "1.0.0",
   "description": "カラオケ配信のセトリ用タイムスタンプを自動記録するツール",
   "permissions": ["storage", "sidePanel"],

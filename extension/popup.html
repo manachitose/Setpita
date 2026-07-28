@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8" />
-<title>Setpeta</title>
+<title>SetPita | セトピタ</title>
 <style>
   :root {
     --bg: #f7f7fa;
@@ -292,16 +292,52 @@
     object-fit: cover;
   }
 
+  .header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .header-row h1 {
+    margin: 0;
+  }
   #appInfo {
-    text-align: center;
+    flex: 0 0 auto;
     font-size: 11px;
     color: var(--text-muted);
-    padding-bottom: 4px;
+    white-space: nowrap;
+  }
+  #appInfo a {
+    color: var(--text-muted);
+    text-decoration: none;
+  }
+  #appInfo a:hover {
+    text-decoration: underline;
+  }
+  #appInfo .sep {
+    margin: 0 4px;
   }
 </style>
 </head>
 <body>
-  <h1>Setpeta</h1>
+  <div class="header-row">
+    <h1>SetPita | セトピタ</h1>
+    <div id="appInfo">
+      <span id="appVersionInfo"></span>
+      <span class="sep">|</span>
+      <a id="storePageLink" href="#" target="_blank" rel="noopener">ストアページ</a>
+      <span class="sep">|</span>
+      <a href="welcome.html" target="_blank" rel="noopener">使い方</a>
+      <span class="sep">|</span>
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSc936k4LTVJZzBZMBQ1SdROUtrJaWJwZEEPSIeHn8hGXwykMQ/viewform?usp=header"
+        target="_blank"
+        rel="noopener"
+        >不具合報告</a
+      >
+    </div>
+  </div>
 
   <section>
     <h2>再生状況</h2>
@@ -354,7 +390,6 @@
       <img src="https://manachitose.github.io/assets/images/home_og_image.jpg" alt="クリエイター/千歳愛 HP" />
     </a>
   </footer>
-  <div id="appInfo"></div>
 
   <script src="popup.js"></script>
 </body>
