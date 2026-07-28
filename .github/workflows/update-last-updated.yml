@@ -1,0 +1,35 @@
+name: Update last-updated date
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - "extension/**"
+
+permissions:
+  contents: write
+
+jobs:
+  update-date:
+    # このワークフロー自身のコミットで再トリガーされる無限ループを防ぐ
+    if: "!contains(github.event.head_commit.message, '[skip last-updated]')"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update LAST_UPDATED in popup.js
+        run: |
+          TODAY=$(date -u +%Y-%m-%d)
+          sed -i "s/const LAST_UPDATED = \".*\";/const LAST_UPDATED = \"$TODAY\";/" extension/popup.js
+
+      - name: Commit changes if needed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- extension/popup.js; then
+            echo "No changes to commit"
+          else
+            git add extension/popup.js
+            git commit -m "chore: update LAST_UPDATED [skip last-updated]"
+            git push
+          fi
