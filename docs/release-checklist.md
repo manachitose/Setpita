@@ -1,7 +1,7 @@
 # リリース手順チェックリスト
 
 ## 事前準備(完了済み)
-- [x] `manifest.json`のバージョンを`1.0.0`に更新
+- [x] `manifest.json`のバージョンを`1.0.1`に更新
 - [x] デバッグ用console.logの整理
 - [x] アイコン一式(16/32/48/128px)を配置
 - [x] プライバシーポリシー文面を作成([privacy-policy.md](privacy-policy.md))
