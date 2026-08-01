@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "SetPita | セトピタ",
+  "name": "__MSG_extName__",
   "version": "1.0.0",
-  "description": "カラオケ配信のセトリ用タイムスタンプを自動記録するツール",
+  "description": "__MSG_extDescription__",
+  "default_locale": "ja",
   "permissions": ["storage", "sidePanel"],
   "host_permissions": ["*://www.youtube.com/*"],
   "background": {

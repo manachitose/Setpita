@@ -1,0 +1,49 @@
+{
+  "extName": { "message": "SetPita | セトピタ" },
+  "extDescription": { "message": "カラオケ配信のセトリ用タイムスタンプを自動記録するツール" },
+
+  "lastUpdatedPrefix": { "message": "最終更新: " },
+
+  "storePageLink": { "message": "ストアページ" },
+  "howToUseLink": { "message": "はじめに" },
+  "bugReportLink": { "message": "不具合報告" },
+
+  "playbackSectionTitle": { "message": "再生状況" },
+  "notPlayingStatus": { "message": "■ 再生していません" },
+  "playingStatusPrefix": { "message": "▶ 再生中: " },
+  "playingNote": { "message": "この動画が再生中の間は、新しいログは追加されません" },
+
+  "logSectionTitle": { "message": "記録ログ" },
+  "noLogsText": { "message": "まだログがありません" },
+  "clearLogsBtn": { "message": "ログをクリア" },
+
+  "setlistSectionTitle": { "message": "セトリ生成" },
+  "firstSongTimeLabel": { "message": "1曲目のアーカイブ開始時刻(例 3:45 または 1:03:45)" },
+  "generateBtn": { "message": "セトリ生成" },
+
+  "outputSectionTitle": { "message": "出力結果" },
+  "copyBtn": { "message": "コピー" },
+
+  "settingsSectionTitle": { "message": "設定" },
+  "autoResetToggleLabel": { "message": "一定時間操作がなければログを自動リセットする" },
+  "autoResetHoursSuffix": { "message": "時間経過でリセット" },
+
+  "tokiSyncFooterTitle": { "message": "TokiSync 販売中！" },
+  "creatorHpFooterTitle": { "message": "クリエイター/千歳愛 HP" },
+
+  "noLogsOutput": { "message": "ログがありません" },
+  "invalidTimeFormat": { "message": "時刻の形式が正しくありません(例: 3:45)" },
+  "autoBadge": { "message": "自動" },
+  "streamStartLabel": { "message": "配信開始" },
+
+  "welcomeTitle": { "message": "セトピタへようこそ" },
+  "welcomeLead": { "message": "カラオケ配信のセトリ用タイムスタンプを自動で記録します。" },
+  "welcomeStep1Title": { "message": "まずはツールバーに固定" },
+  "welcomeStep1Body": { "message": "ブラウザ右上の拡張機能アイコン（パズルのピース）を開き、セトピタのピンをクリックしてください。いつでもワンクリックでサイドパネルを開けるようになります。" },
+  "welcomeStep2Title": { "message": "アイコンをクリックしてサイドパネルを開く" },
+  "welcomeStep2Body": { "message": "セトピタのアイコンをクリックすると、画面右側にサイドパネルが開きます。動画を操作していても閉じないので、配信中はこのまま開いたままにしておいて大丈夫です。" },
+  "welcomeStep3Title": { "message": "YouTubeでカラオケ音源を再生する" },
+  "welcomeStep3Body": { "message": "どのタブで再生しても自動的に検知し、「再生時刻」「動画タイトル」「URL」がログに記録されていきます。ログはサイドパネルからいつでも確認・編集できます。" },
+  "welcomeStep4Title": { "message": "配信終了後、セトリを生成する" },
+  "welcomeStep4Body": { "message": "アーカイブを確認して「1曲目が実際に何分何秒から始まっているか」をサイドパネルに入力し、「セトリ生成」を押すと、タイムスタンプ付きのセトリテキストが出来上がります。「コピー」ボタンでそのまま概要欄に貼り付けられます。" }
+}

@@ -1,0 +1,49 @@
+{
+  "extName": { "message": "SetPita" },
+  "extDescription": { "message": "自動記錄卡拉OK直播歌單用時間戳記的工具" },
+
+  "lastUpdatedPrefix": { "message": "最後更新: " },
+
+  "storePageLink": { "message": "商店頁面" },
+  "howToUseLink": { "message": "開始使用" },
+  "bugReportLink": { "message": "問題回報" },
+
+  "playbackSectionTitle": { "message": "播放狀態" },
+  "notPlayingStatus": { "message": "■ 未播放" },
+  "playingStatusPrefix": { "message": "▶ 播放中: " },
+  "playingNote": { "message": "此影片播放期間不會新增記錄" },
+
+  "logSectionTitle": { "message": "記錄日誌" },
+  "noLogsText": { "message": "尚無記錄" },
+  "clearLogsBtn": { "message": "清除記錄" },
+
+  "setlistSectionTitle": { "message": "生成歌單" },
+  "firstSongTimeLabel": { "message": "第一首歌在存檔中的開始時間(例如 3:45 或 1:03:45)" },
+  "generateBtn": { "message": "生成歌單" },
+
+  "outputSectionTitle": { "message": "輸出結果" },
+  "copyBtn": { "message": "複製" },
+
+  "settingsSectionTitle": { "message": "設定" },
+  "autoResetToggleLabel": { "message": "若一段時間沒有操作，自動重置記錄" },
+  "autoResetHoursSuffix": { "message": "小時後重置" },
+
+  "tokiSyncFooterTitle": { "message": "TokiSync 熱賣中！" },
+  "creatorHpFooterTitle": { "message": "創作者：千歲愛 官網" },
+
+  "noLogsOutput": { "message": "沒有記錄" },
+  "invalidTimeFormat": { "message": "時間格式不正確(例如: 3:45)" },
+  "autoBadge": { "message": "自動" },
+  "streamStartLabel": { "message": "開播" },
+
+  "welcomeTitle": { "message": "歡迎使用 SetPita" },
+  "welcomeLead": { "message": "自動記錄卡拉OK直播歌單用的時間戳記。" },
+  "welcomeStep1Title": { "message": "先固定到工具列" },
+  "welcomeStep1Body": { "message": "點擊瀏覽器右上角的拼圖圖示(擴充功能清單)，然後點擊 SetPita 旁邊的 📌 圖釘圖示。這樣它就會一直顯示在工具列上，方便隨時開啟。" },
+  "welcomeStep2Title": { "message": "點擊圖示開啟側邊面板" },
+  "welcomeStep2Body": { "message": "點擊 SetPita 圖示後，畫面右側會開啟側邊面板。即使操作影片也不會關閉，直播期間可以一直保持開啟。" },
+  "welcomeStep3Title": { "message": "在 YouTube 上播放卡拉OK音源" },
+  "welcomeStep3Body": { "message": "無論在哪個分頁播放都會自動偵測，並將「播放時間」「影片標題」「URL」記錄下來。記錄可以隨時在側邊面板中確認與編輯。" },
+  "welcomeStep4Title": { "message": "直播結束後生成歌單" },
+  "welcomeStep4Body": { "message": "確認存檔後，在側邊面板輸入「第一首歌實際從幾分幾秒開始」，按下「生成歌單」即可產生附時間戳記的歌單文字。按「複製」按鈕即可直接貼到影片說明欄。" }
+}

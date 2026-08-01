@@ -1,0 +1,49 @@
+{
+  "extName": { "message": "SetPita" },
+  "extDescription": { "message": "노래방 방송 세트리스트용 타임스탬프를 자동으로 기록하는 도구" },
+
+  "lastUpdatedPrefix": { "message": "최종 업데이트: " },
+
+  "storePageLink": { "message": "스토어 페이지" },
+  "howToUseLink": { "message": "시작하기" },
+  "bugReportLink": { "message": "버그 신고" },
+
+  "playbackSectionTitle": { "message": "재생 상태" },
+  "notPlayingStatus": { "message": "■ 재생 중이 아님" },
+  "playingStatusPrefix": { "message": "▶ 재생 중: " },
+  "playingNote": { "message": "이 영상이 재생되는 동안에는 새 로그가 추가되지 않습니다" },
+
+  "logSectionTitle": { "message": "기록 로그" },
+  "noLogsText": { "message": "아직 로그가 없습니다" },
+  "clearLogsBtn": { "message": "로그 지우기" },
+
+  "setlistSectionTitle": { "message": "세트리스트 생성" },
+  "firstSongTimeLabel": { "message": "첫 곡의 아카이브 시작 시각 (예: 3:45 또는 1:03:45)" },
+  "generateBtn": { "message": "세트리스트 생성" },
+
+  "outputSectionTitle": { "message": "출력 결과" },
+  "copyBtn": { "message": "복사" },
+
+  "settingsSectionTitle": { "message": "설정" },
+  "autoResetToggleLabel": { "message": "일정 시간 조작이 없으면 로그를 자동으로 초기화" },
+  "autoResetHoursSuffix": { "message": "시간 경과 시 초기화" },
+
+  "tokiSyncFooterTitle": { "message": "TokiSync 판매 중!" },
+  "creatorHpFooterTitle": { "message": "제작자: 치토세 아이 - 홈페이지" },
+
+  "noLogsOutput": { "message": "로그가 없습니다" },
+  "invalidTimeFormat": { "message": "시간 형식이 올바르지 않습니다 (예: 3:45)" },
+  "autoBadge": { "message": "자동" },
+  "streamStartLabel": { "message": "방송 시작" },
+
+  "welcomeTitle": { "message": "세토피타에 오신 것을 환영합니다" },
+  "welcomeLead": { "message": "노래방 방송 세트리스트용 타임스탬프를 자동으로 기록합니다." },
+  "welcomeStep1Title": { "message": "먼저 툴바에 고정하기" },
+  "welcomeStep1Body": { "message": "브라우저 오른쪽 위의 퍼즐 조각 아이콘(확장 프로그램 목록)을 클릭한 뒤, 세토피타 옆의 📌 고정 아이콘을 눌러 주세요. 툴바에 항상 표시되어 바로 열 수 있게 됩니다." },
+  "welcomeStep2Title": { "message": "아이콘을 클릭해 사이드 패널 열기" },
+  "welcomeStep2Body": { "message": "세토피타 아이콘을 클릭하면 화면 오른쪽에 사이드 패널이 열립니다. 영상을 조작해도 닫히지 않으니, 방송 중에는 그대로 열어 두셔도 됩니다." },
+  "welcomeStep3Title": { "message": "YouTube에서 노래방 음원 재생하기" },
+  "welcomeStep3Body": { "message": "어느 탭에서 재생하든 자동으로 감지되어 '재생 시각', '영상 제목', 'URL'이 로그에 기록됩니다. 로그는 사이드 패널에서 언제든 확인하고 수정할 수 있습니다." },
+  "welcomeStep4Title": { "message": "방송 종료 후 세트리스트 생성하기" },
+  "welcomeStep4Body": { "message": "아카이브를 확인해 '첫 곡이 실제로 몇 분 몇 초부터 시작하는지'를 사이드 패널에 입력하고 '세트리스트 생성'을 누르면, 타임스탬프가 포함된 세트리스트 텍스트가 만들어집니다. '복사' 버튼으로 방송 설명란에 그대로 붙여넣을 수 있습니다." }
+}

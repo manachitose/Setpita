@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html>
 <head>
 <meta charset="UTF-8" />
-<title>SetPita | セトピタ</title>
+<title>SetPita</title>
 <style>
   :root {
     --bg: #f7f7fa;
@@ -104,9 +104,12 @@
     flex-direction: column;
     gap: 6px;
   }
-  #logList:empty::after {
-    content: "まだログがありません";
+  #logListEmpty {
+    display: none;
     color: var(--text-muted);
+  }
+  #logList:empty + #logListEmpty {
+    display: block;
   }
 
   .log-row {
@@ -326,68 +329,71 @@
     <div id="appInfo">
       <span id="appVersionInfo"></span>
       <span class="sep">|</span>
-      <a id="storePageLink" href="#" target="_blank" rel="noopener">ストアページ</a>
+      <a id="storePageLink" href="#" target="_blank" rel="noopener" data-i18n="storePageLink"></a>
       <span class="sep">|</span>
-      <a href="welcome.html" target="_blank" rel="noopener">使い方</a>
-      <span class="sep">|</span>
+      <a href="welcome.html" target="_blank" rel="noopener" data-i18n="howToUseLink"></a>
+      <span class="sep" id="bugReportSep">|</span>
       <a
+        id="bugReportLink"
         href="https://docs.google.com/forms/d/e/1FAIpQLSc936k4LTVJZzBZMBQ1SdROUtrJaWJwZEEPSIeHn8hGXwykMQ/viewform?usp=header"
         target="_blank"
         rel="noopener"
-        >不具合報告</a
+        data-i18n="bugReportLink"
+        ></a
       >
     </div>
   </div>
 
   <section>
-    <h2>再生状況</h2>
-    <div id="playbackStatus">■ 再生していません</div>
+    <h2 data-i18n="playbackSectionTitle"></h2>
+    <div id="playbackStatus"></div>
     <div id="playbackStatusNote"></div>
   </section>
 
   <section>
-    <h2>記録ログ</h2>
+    <h2 data-i18n="logSectionTitle"></h2>
     <div id="logList"></div>
+    <div id="logListEmpty" data-i18n="noLogsText"></div>
     <div class="actions" style="margin-top: 8px;">
-      <button id="clearLogsBtn" class="danger-outline">ログをクリア</button>
+      <button id="clearLogsBtn" class="danger-outline" data-i18n="clearLogsBtn"></button>
     </div>
   </section>
 
   <section>
-    <h2>セトリ生成</h2>
-    <label for="firstSongTimeInput">1曲目のアーカイブ開始時刻(例 3:45 または 1:03:45)</label>
+    <h2 data-i18n="setlistSectionTitle"></h2>
+    <label for="firstSongTimeInput" data-i18n="firstSongTimeLabel"></label>
     <input type="text" id="firstSongTimeInput" placeholder="mm:ss" />
     <div class="actions" style="margin-top: 8px;">
-      <button id="generateBtn" class="primary">セトリ生成</button>
+      <button id="generateBtn" class="primary" data-i18n="generateBtn"></button>
     </div>
   </section>
 
   <section>
-    <h2>出力結果</h2>
+    <h2 data-i18n="outputSectionTitle"></h2>
     <textarea id="setlistOutput"></textarea>
     <div class="actions">
-      <button id="copyBtn">コピー</button>
+      <button id="copyBtn" data-i18n="copyBtn"></button>
     </div>
   </section>
 
   <section>
-    <h2>設定</h2>
+    <h2 data-i18n="settingsSectionTitle"></h2>
     <label class="toggle-row">
       <input type="checkbox" id="autoResetEnabledInput" />
-      <span>一定時間操作がなければログを自動リセットする</span>
+      <span data-i18n="autoResetToggleLabel"></span>
     </label>
     <div class="hours-row" id="autoResetHoursRow">
       <input type="number" id="autoResetHoursInput" min="1" step="1" />
-      <span>時間経過でリセット</span>
+      <span data-i18n="autoResetHoursSuffix"></span>
     </div>
   </section>
 
   <footer>
-    <a href="https://manachitose.booth.pm/items/7671332" target="_blank" rel="noopener" title="TokiSync 販売中！">
-      <img src="https://manachitose.github.io/TokiSync/icons/TokiSync_og_image.jpg" alt="TokiSync 販売中！" />
+    <a href="https://manachitose.booth.pm/items/7671332" target="_blank" rel="noopener" id="tokiSyncFooterLink">
+      <img src="https://manachitose.github.io/TokiSync/icons/TokiSync_og_image.jpg" id="tokiSyncFooterImg" />
     </a>
-    <a href="https://manachitose.github.io/" target="_blank" rel="noopener" title="クリエイター/千歳愛 HP">
-      <img src="https://manachitose.github.io/assets/images/home_og_image.jpg" alt="クリエイター/千歳愛 HP" />
+    <a href="https://manachitose.github.io/" target="_blank" rel="noopener" id="creatorHpFooterLink">
+      <img src="https://manachitose.github.io/assets/images/home_og_image.jpg" id="creatorHpFooterImg" />
     </a>
   </footer>
 

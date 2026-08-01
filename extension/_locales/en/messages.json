@@ -1,0 +1,49 @@
+{
+  "extName": { "message": "SetPita" },
+  "extDescription": { "message": "A tool that automatically logs timestamps for karaoke stream setlists" },
+
+  "lastUpdatedPrefix": { "message": "Last updated: " },
+
+  "storePageLink": { "message": "Store Page" },
+  "howToUseLink": { "message": "Getting Started" },
+  "bugReportLink": { "message": "Report a Bug" },
+
+  "playbackSectionTitle": { "message": "Playback Status" },
+  "notPlayingStatus": { "message": "■ Not Playing" },
+  "playingStatusPrefix": { "message": "▶ Playing: " },
+  "playingNote": { "message": "No new logs will be added while this video is playing" },
+
+  "logSectionTitle": { "message": "Log" },
+  "noLogsText": { "message": "No logs yet" },
+  "clearLogsBtn": { "message": "Clear Logs" },
+
+  "setlistSectionTitle": { "message": "Generate Setlist" },
+  "firstSongTimeLabel": { "message": "Start time of the first song in the archive (e.g. 3:45 or 1:03:45)" },
+  "generateBtn": { "message": "Generate Setlist" },
+
+  "outputSectionTitle": { "message": "Output" },
+  "copyBtn": { "message": "Copy" },
+
+  "settingsSectionTitle": { "message": "Settings" },
+  "autoResetToggleLabel": { "message": "Automatically reset the log after a period of inactivity" },
+  "autoResetHoursSuffix": { "message": "hours before reset" },
+
+  "tokiSyncFooterTitle": { "message": "TokiSync - Now on Sale!" },
+  "creatorHpFooterTitle": { "message": "Creator: Ai Chitose - Website" },
+
+  "noLogsOutput": { "message": "No logs" },
+  "invalidTimeFormat": { "message": "Invalid time format (e.g. 3:45)" },
+  "autoBadge": { "message": "Auto" },
+  "streamStartLabel": { "message": "Stream Start" },
+
+  "welcomeTitle": { "message": "Welcome to SetPita" },
+  "welcomeLead": { "message": "Automatically logs timestamps for your karaoke stream setlists." },
+  "welcomeStep1Title": { "message": "First, pin it to the toolbar" },
+  "welcomeStep1Body": { "message": "Click the puzzle-piece icon (extensions list) at the top right of your browser, then click the 📌 pin icon next to SetPita. It will stay visible on the toolbar so you can open it instantly." },
+  "welcomeStep2Title": { "message": "Click the icon to open the side panel" },
+  "welcomeStep2Body": { "message": "Clicking the SetPita icon opens a side panel on the right side of the screen. It stays open even while you interact with the video, so feel free to leave it open during your stream." },
+  "welcomeStep3Title": { "message": "Play your karaoke track on YouTube" },
+  "welcomeStep3Body": { "message": "Playback is detected automatically in any tab, and the \"playback time,\" \"video title,\" and \"URL\" are logged. You can check and edit the log from the side panel at any time." },
+  "welcomeStep4Title": { "message": "Generate the setlist after your stream" },
+  "welcomeStep4Body": { "message": "Check the archive for the actual start time of the first song, enter it in the side panel, and click \"Generate Setlist\" to create a timestamped setlist. Use the \"Copy\" button to paste it straight into your video description." }
+}

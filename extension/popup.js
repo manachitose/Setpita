@@ -2,19 +2,38 @@ function sendMessage(message) {
   return chrome.runtime.sendMessage(message);
 }
 
+const t = (key) => chrome.i18n.getMessage(key);
+const uiLang = chrome.i18n.getUILanguage();
+
+document.documentElement.lang = uiLang;
+
+for (const el of document.querySelectorAll("[data-i18n]")) {
+  el.textContent = t(el.dataset.i18n);
+}
+
+document.getElementById("tokiSyncFooterLink").title = t("tokiSyncFooterTitle");
+document.getElementById("tokiSyncFooterImg").alt = t("tokiSyncFooterTitle");
+document.getElementById("creatorHpFooterLink").title = t("creatorHpFooterTitle");
+document.getElementById("creatorHpFooterImg").alt = t("creatorHpFooterTitle");
+
+// 不具合報告フォームは日本語ユーザー向けにのみ用意されているため、日本語UI以外では非表示にする
+if (!uiLang.startsWith("ja")) {
+  document.getElementById("bugReportLink").style.display = "none";
+  document.getElementById("bugReportSep").style.display = "none";
+}
+
 // コード変更のたびに手動で更新する(バージョンはmanifest.jsonから自動取得)
 const LAST_UPDATED = "2026-07-28";
 
 document.getElementById("appVersionInfo").textContent =
-  `v${chrome.runtime.getManifest().version} (最終更新: ${LAST_UPDATED})`;
+  `v${chrome.runtime.getManifest().version} (${t("lastUpdatedPrefix")}${LAST_UPDATED})`;
 
-// Web Store公開後、拡張機能IDがそのままストアページのURLになる
 document.getElementById("storePageLink").href =
-  `https://chromewebstore.google.com/detail/${chrome.runtime.id}`;
+  "https://chromewebstore.google.com/detail/setpita-%E3%82%BB%E3%83%88%E3%83%94%E3%82%BF/caajbfckihllgmbgannehljfabddabhg";
 
 function formatLocalTime(ts) {
   const d = new Date(ts);
-  return d.toLocaleTimeString("ja-JP", { hour12: false });
+  return d.toLocaleTimeString(uiLang, { hour12: false });
 }
 
 function parseTimeInput(str) {
@@ -60,7 +79,7 @@ function renderLogs(logs) {
     if (log.isAutoplay) {
       badge = document.createElement("span");
       badge.className = "badge";
-      badge.textContent = "自動";
+      badge.textContent = t("autoBadge");
     }
 
     const titleInput = document.createElement("input");
@@ -94,11 +113,11 @@ function renderPlaybackStatus(status) {
   const noteEl = document.getElementById("playbackStatusNote");
 
   if (status?.playing) {
-    statusEl.textContent = `▶ 再生中: ${status.title}`;
+    statusEl.textContent = `${t("playingStatusPrefix")}${status.title}`;
     statusEl.classList.add("playing");
-    noteEl.textContent = "この動画が再生中の間は、新しいログは追加されません";
+    noteEl.textContent = t("playingNote");
   } else {
-    statusEl.textContent = "■ 再生していません";
+    statusEl.textContent = t("notPlayingStatus");
     statusEl.classList.remove("playing");
     noteEl.textContent = "";
   }
@@ -127,19 +146,19 @@ document.getElementById("clearLogsBtn").addEventListener("click", async () => {
 document.getElementById("generateBtn").addEventListener("click", () => {
   const outputEl = document.getElementById("setlistOutput");
   if (currentLogs.length === 0) {
-    outputEl.value = "ログがありません";
+    outputEl.value = t("noLogsOutput");
     return;
   }
 
   const inputStr = document.getElementById("firstSongTimeInput").value;
   const firstSongSeconds = parseTimeInput(inputStr);
   if (firstSongSeconds === null) {
-    outputEl.value = "時刻の形式が正しくありません(例: 3:45)";
+    outputEl.value = t("invalidTimeFormat");
     return;
   }
 
   const offsetMs = firstSongSeconds * 1000 - currentLogs[0].ts;
-  const blocks = [["00:00:00 配信開始"]];
+  const blocks = [[`00:00:00 ${t("streamStartLabel")}`]];
   for (const log of currentLogs) {
     const seconds = (log.ts + offsetMs) / 1000;
     const lines = [`${formatSeconds(seconds)} ${log.title}`];
