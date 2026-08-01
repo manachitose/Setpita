@@ -23,7 +23,7 @@ if (!uiLang.startsWith("ja")) {
 }
 
 // コード変更のたびに手動で更新する(バージョンはmanifest.jsonから自動取得)
-const LAST_UPDATED = "2026-07-28";
+const LAST_UPDATED = "2026-08-01";
 
 document.getElementById("appVersionInfo").textContent =
   `v${chrome.runtime.getManifest().version} (${t("lastUpdatedPrefix")}${LAST_UPDATED})`;
