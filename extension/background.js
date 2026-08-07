@@ -74,6 +74,9 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
           playbackStatus: message.playing
             ? { playing: true, title: message.title, url: message.url ?? null }
             : { playing: false },
+          // 再生中のタブが停止イベントを出さずに閉じられた場合に備えて、
+          // どのタブが再生中と報告してきたかを覚えておく(onRemovedで使う)
+          playingTabId: message.playing ? sender.tab?.id ?? null : null,
         });
         sendResponse({ ok: true });
         break;
@@ -125,4 +128,16 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   })();
 
   return true; // sendResponseを非同期で呼ぶために必要
+});
+
+// 再生中のタブが、一時停止・終了イベントを出さないまま閉じられることがある
+// (再生したままタブを閉じる等)。放置すると「再生中: XXXXX」が残り続けて
+// 以後の記録が止まって見えるため、そのタブが閉じられたら再生状態を戻す。
+chrome.tabs.onRemoved.addListener(async (tabId) => {
+  const { playingTabId = null } = await chrome.storage.local.get(["playingTabId"]);
+  if (playingTabId !== tabId) return;
+  await chrome.storage.local.set({
+    playbackStatus: { playing: false },
+    playingTabId: null,
+  });
 });
