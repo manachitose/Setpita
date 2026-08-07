@@ -27,6 +27,7 @@ async function getSettings() {
   return {
     autoResetEnabled: settings.autoResetEnabled ?? true,
     autoResetHours: settings.autoResetHours ?? DEFAULT_AUTO_RESET_HOURS,
+    pauseAutoplayEnabled: settings.pauseAutoplayEnabled ?? true,
   };
 }
 

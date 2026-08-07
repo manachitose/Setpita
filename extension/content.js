@@ -1,6 +1,9 @@
 // YouTubeの再生ページに注入され、動画の再生開始を検知してbackgroundへ通知する。
 // SPA遷移で<video>要素が入れ替わっても拾えるよう、documentのキャプチャフェーズで監視する。
-// "本当に新曲かどうか"の判定はせず、playイベントは都度そのまま通知する(docs参照)。
+// "本当に新曲かどうか"の判定はせず、手動再生のplayイベントは都度そのまま通知する(docs参照)。
+// 自動再生(ページを開いた直後の自動再生・プレイリストの次の曲への自動遷移など)は、
+// 設定でユーザーが有効化している場合、配信者の意図しないタイミングで音が出るのを防ぐため
+// 検知したら即座に一時停止し、記録もしない(無効化している場合は従来通り記録する)。
 
 function cleanTitle(rawTitle) {
   // YouTubeは未読通知があると先頭に"(2) "のような件数を付けるため取り除く
@@ -38,6 +41,20 @@ function isMainPlayerVideo(el) {
 const AUTOPLAY_THRESHOLD_MS = 1500;
 let lastInteractionTs = 0;
 
+// 自動再生を検知したら一時停止する機能(設定でユーザーがON/OFFできる。既定はON)
+let pauseAutoplayEnabled = true;
+
+async function loadPauseAutoplaySetting() {
+  const { settings = {} } = await chrome.storage.local.get(["settings"]);
+  pauseAutoplayEnabled = settings.pauseAutoplayEnabled ?? true;
+}
+loadPauseAutoplaySetting();
+
+chrome.storage.onChanged.addListener((changes, area) => {
+  if (area !== "local" || !changes.settings) return;
+  pauseAutoplayEnabled = changes.settings.newValue?.pauseAutoplayEnabled ?? true;
+});
+
 // 拡張がリロードされた後もこのタブに残り続けている古いcontent.jsは、
 // chrome.runtimeへの参照自体が「Extension context invalidated」で例外を吐く。
 // 一度検知したら全リスナーを外して静かに諦める(直すにはタブのリロードが必要)。
@@ -74,13 +91,21 @@ function onPlay(event) {
   if (invalidated || !isMainPlayerVideo(event.target)) return;
 
   try {
+    const ts = Date.now();
+    const isAutoplay = ts - lastInteractionTs > AUTOPLAY_THRESHOLD_MS;
+
+    if (isAutoplay && pauseAutoplayEnabled) {
+      // 歌枠配信中に演者の意図しないタイミングで音が出るのを防ぐため、
+      // 自動再生と判定した動画はすぐに一時停止する(記録もしない。
+      // 配信者が実際に再生ボタンを押したときにあらためて手動再生として記録される)
+      event.target.pause();
+      return;
+    }
+
     if (!chrome.runtime?.id) {
       markInvalidated();
       return;
     }
-
-    const ts = Date.now();
-    const isAutoplay = ts - lastInteractionTs > AUTOPLAY_THRESHOLD_MS;
 
     getTitleAfterDelay().then((title) => {
       if (invalidated) return;
@@ -123,6 +148,19 @@ document.addEventListener("keydown", onInteraction, true);
 document.addEventListener("play", onPlay, true);
 document.addEventListener("pause", onStop, true);
 document.addEventListener("ended", onStop, true);
+
+// YouTubeはwatchページ間の遷移をSPA(pushState)で行うため、次の動画のサムネイルを
+// クリックして遷移した場合もcontent.jsは再読み込みされず、lastInteractionTsが
+// 生き残ってしまう。そのままだと「遷移のためのクリック」を「新しい動画の手動再生」と
+// 誤認識し、遷移直後の自動再生を一時停止できなくなるため、YouTube側が発火する
+// SPA遷移イベントを合図に直前までの操作履歴を無効化する。
+document.addEventListener(
+  "yt-navigate-start",
+  () => {
+    lastInteractionTs = 0;
+  },
+  true
+);
 
 // 再生リストを選択した直後など、content.jsの起動より先に自動再生が始まっていた場合、
 // playイベントを取りこぼしてしまうため、起動時点で既に再生中かどうかを確認して拾う。

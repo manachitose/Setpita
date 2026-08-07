@@ -1,5 +1,5 @@
 {
-  "extName": { "message": "SetPita" },
+  "extName": { "message": "SetPeta" },
   "extDescription": { "message": "노래방 방송 세트리스트용 타임스탬프를 자동으로 기록하는 도구" },
 
   "lastUpdatedPrefix": { "message": "최종 업데이트: " },
@@ -27,6 +27,7 @@
   "settingsSectionTitle": { "message": "설정" },
   "autoResetToggleLabel": { "message": "일정 시간 조작이 없으면 로그를 자동으로 초기화" },
   "autoResetHoursSuffix": { "message": "시간 경과 시 초기화" },
+  "pauseAutoplayToggleLabel": { "message": "화면 전환 시 동영상 재생을 정지" },
 
   "tokiSyncFooterTitle": { "message": "TokiSync 판매 중!" },
   "creatorHpFooterTitle": { "message": "제작자: 치토세 아이 - 홈페이지" },

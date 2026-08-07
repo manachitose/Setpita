@@ -29,7 +29,7 @@ document.getElementById("appVersionInfo").textContent =
   `v${chrome.runtime.getManifest().version} (${t("lastUpdatedPrefix")}${LAST_UPDATED})`;
 
 document.getElementById("storePageLink").href =
-  "https://chromewebstore.google.com/detail/setpita-%E3%82%BB%E3%83%88%E3%83%94%E3%82%BF/caajbfckihllgmbgannehljfabddabhg";
+  "https://chromewebstore.google.com/detail/SetPeta-%E3%82%BB%E3%83%88%E3%83%94%E3%82%BF/caajbfckihllgmbgannehljfabddabhg";
 
 function formatLocalTime(ts) {
   const d = new Date(ts);
@@ -129,6 +129,7 @@ function renderSettings(settings) {
   document.getElementById("autoResetHoursRow").style.display = settings.autoResetEnabled
     ? "flex"
     : "none";
+  document.getElementById("pauseAutoplayEnabledInput").checked = settings.pauseAutoplayEnabled;
 }
 
 async function refresh() {
@@ -187,6 +188,13 @@ document.getElementById("autoResetHoursInput").addEventListener("change", async 
   const hours = Number(e.target.value);
   if (!Number.isFinite(hours) || hours <= 0) return;
   await sendMessage({ type: "SET_SETTINGS", settings: { autoResetHours: hours } });
+});
+
+document.getElementById("pauseAutoplayEnabledInput").addEventListener("change", async (e) => {
+  await sendMessage({
+    type: "SET_SETTINGS",
+    settings: { pauseAutoplayEnabled: e.target.checked },
+  });
 });
 
 // popupを開いたまま記録・再生状態が変わった場合に追従する

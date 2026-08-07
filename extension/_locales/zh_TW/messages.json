@@ -1,5 +1,5 @@
 {
-  "extName": { "message": "SetPita" },
+  "extName": { "message": "SetPeta" },
   "extDescription": { "message": "自動記錄卡拉OK直播歌單用時間戳記的工具" },
 
   "lastUpdatedPrefix": { "message": "最後更新: " },
@@ -27,6 +27,7 @@
   "settingsSectionTitle": { "message": "設定" },
   "autoResetToggleLabel": { "message": "若一段時間沒有操作，自動重置記錄" },
   "autoResetHoursSuffix": { "message": "小時後重置" },
+  "pauseAutoplayToggleLabel": { "message": "畫面切換時停止影片播放" },
 
   "tokiSyncFooterTitle": { "message": "TokiSync 熱賣中！" },
   "creatorHpFooterTitle": { "message": "創作者：千歲愛 官網" },
@@ -36,12 +37,12 @@
   "autoBadge": { "message": "自動" },
   "streamStartLabel": { "message": "開播" },
 
-  "welcomeTitle": { "message": "歡迎使用 SetPita" },
+  "welcomeTitle": { "message": "歡迎使用 SetPeta" },
   "welcomeLead": { "message": "自動記錄卡拉OK直播歌單用的時間戳記。" },
   "welcomeStep1Title": { "message": "先固定到工具列" },
-  "welcomeStep1Body": { "message": "點擊瀏覽器右上角的拼圖圖示(擴充功能清單)，然後點擊 SetPita 旁邊的 📌 圖釘圖示。這樣它就會一直顯示在工具列上，方便隨時開啟。" },
+  "welcomeStep1Body": { "message": "點擊瀏覽器右上角的拼圖圖示(擴充功能清單)，然後點擊 SetPeta 旁邊的 📌 圖釘圖示。這樣它就會一直顯示在工具列上，方便隨時開啟。" },
   "welcomeStep2Title": { "message": "點擊圖示開啟側邊面板" },
-  "welcomeStep2Body": { "message": "點擊 SetPita 圖示後，畫面右側會開啟側邊面板。即使操作影片也不會關閉，直播期間可以一直保持開啟。" },
+  "welcomeStep2Body": { "message": "點擊 SetPeta 圖示後，畫面右側會開啟側邊面板。即使操作影片也不會關閉，直播期間可以一直保持開啟。" },
   "welcomeStep3Title": { "message": "在 YouTube 上播放卡拉OK音源" },
   "welcomeStep3Body": { "message": "無論在哪個分頁播放都會自動偵測，並將「播放時間」「影片標題」「URL」記錄下來。記錄可以隨時在側邊面板中確認與編輯。" },
   "welcomeStep4Title": { "message": "直播結束後生成歌單" },

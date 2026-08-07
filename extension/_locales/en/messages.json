@@ -1,5 +1,5 @@
 {
-  "extName": { "message": "SetPita" },
+  "extName": { "message": "SetPeta" },
   "extDescription": { "message": "A tool that automatically logs timestamps for karaoke stream setlists" },
 
   "lastUpdatedPrefix": { "message": "Last updated: " },
@@ -27,6 +27,7 @@
   "settingsSectionTitle": { "message": "Settings" },
   "autoResetToggleLabel": { "message": "Automatically reset the log after a period of inactivity" },
   "autoResetHoursSuffix": { "message": "hours before reset" },
+  "pauseAutoplayToggleLabel": { "message": "Pause videos that autoplay on navigation" },
 
   "tokiSyncFooterTitle": { "message": "TokiSync - Now on Sale!" },
   "creatorHpFooterTitle": { "message": "Creator: Ai Chitose - Website" },
@@ -36,12 +37,12 @@
   "autoBadge": { "message": "Auto" },
   "streamStartLabel": { "message": "Stream Start" },
 
-  "welcomeTitle": { "message": "Welcome to SetPita" },
+  "welcomeTitle": { "message": "Welcome to SetPeta" },
   "welcomeLead": { "message": "Automatically logs timestamps for your karaoke stream setlists." },
   "welcomeStep1Title": { "message": "First, pin it to the toolbar" },
-  "welcomeStep1Body": { "message": "Click the puzzle-piece icon (extensions list) at the top right of your browser, then click the 📌 pin icon next to SetPita. It will stay visible on the toolbar so you can open it instantly." },
+  "welcomeStep1Body": { "message": "Click the puzzle-piece icon (extensions list) at the top right of your browser, then click the 📌 pin icon next to SetPeta. It will stay visible on the toolbar so you can open it instantly." },
   "welcomeStep2Title": { "message": "Click the icon to open the side panel" },
-  "welcomeStep2Body": { "message": "Clicking the SetPita icon opens a side panel on the right side of the screen. It stays open even while you interact with the video, so feel free to leave it open during your stream." },
+  "welcomeStep2Body": { "message": "Clicking the SetPeta icon opens a side panel on the right side of the screen. It stays open even while you interact with the video, so feel free to leave it open during your stream." },
   "welcomeStep3Title": { "message": "Play your karaoke track on YouTube" },
   "welcomeStep3Body": { "message": "Playback is detected automatically in any tab, and the \"playback time,\" \"video title,\" and \"URL\" are logged. You can check and edit the log from the side panel at any time." },
   "welcomeStep4Title": { "message": "Generate the setlist after your stream" },

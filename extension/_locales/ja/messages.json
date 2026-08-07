@@ -1,5 +1,5 @@
 {
-  "extName": { "message": "SetPita | セトピタ" },
+  "extName": { "message": "SetPeta | セトピタ" },
   "extDescription": { "message": "カラオケ配信のセトリ用タイムスタンプを自動記録するツール" },
 
   "lastUpdatedPrefix": { "message": "最終更新: " },
@@ -27,6 +27,7 @@
   "settingsSectionTitle": { "message": "設定" },
   "autoResetToggleLabel": { "message": "一定時間操作がなければログを自動リセットする" },
   "autoResetHoursSuffix": { "message": "時間経過でリセット" },
+  "pauseAutoplayToggleLabel": { "message": "画面遷移時の動画再生を停止する" },
 
   "tokiSyncFooterTitle": { "message": "TokiSync 販売中！" },
   "creatorHpFooterTitle": { "message": "クリエイター/千歳愛 HP" },

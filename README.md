@@ -1,4 +1,4 @@
-# SetPita | セトピタ
+# SetPeta | セトピタ
 
 YouTubeで再生したカラオケ音源を検知し、配信のセトリ用タイムスタンプを自動で記録するChrome拡張機能です。
 
@@ -6,7 +6,7 @@ YouTubeで再生したカラオケ音源を検知し、配信のセトリ用タ�
 
 通常はChromeウェブストアからインストールできます。
 
-**[Chromeウェブストアで「セトピタ」をインストール](https://chromewebstore.google.com/detail/setpita-%E3%82%BB%E3%83%88%E3%83%94%E3%82%BF/caajbfckihllgmbgannehljfabddabhg)**
+**[Chromeウェブストアで「セトピタ」をインストール](https://chromewebstore.google.com/detail/SetPeta-%E3%82%BB%E3%83%88%E3%83%94%E3%82%BF/caajbfckihllgmbgannehljfabddabhg)**
 
 ### GitHubから手動でインストールする場合
 

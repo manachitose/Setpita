@@ -18,5 +18,5 @@ jobs:
       # extensionフォルダをそのまま渡し、artifactのzip化に任せる。
       - uses: actions/upload-artifact@v4
         with:
-          name: Setpita-v${{ steps.version.outputs.version }}
+          name: SetPeta-v${{ steps.version.outputs.version }}
           path: extension/
